@@ -4,7 +4,8 @@ export class Login extends React.Component {
     state = {
         username: '',
         password: '',
-        remember: false
+        remember: false,
+        disButton: true
     }
 
     handleInputChange = (event) => {
@@ -14,8 +15,14 @@ export class Login extends React.Component {
         const checked = event.target.checked;
 
         this.setState({
-            [name] : type == "checkbox" ? checked : value
+            [name] : type == "checkbox" ? checked : value,
+            disButton : (username == '' && password == '') ? true : false
         })
+    }
+
+    //not sure if intended functionality
+    onLogin = (state) => {
+        return this.state;
     }
     
     render() {
@@ -37,7 +44,8 @@ export class Login extends React.Component {
                 type="checkbox" 
                 checked={this.state.remember}
                 onChange={this.handleInputChange} 
-            />   
+            />
+            <button disabled={this.state.disButton} onClick={this.props.onLogin}>Login</button>
         </div>
         
 
