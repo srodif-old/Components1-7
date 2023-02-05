@@ -22,13 +22,26 @@ export class TodoList extends React.Component {
     resetList = () => {
         this.setState({ items: [] });
     };
+
+    removeItem = (index) => {
+        this.setState(prevState => {
+            const items = [...prevState.items];
+            items.splice(index, 1);
+            return { items };
+        });
+    };
     
     render() { 
 
         return (
             <div>
                 <ul>
-                    {this.state.items.map((item, index) => (<li key={index}>{item}</li>))}
+                    <li key={index}>
+                                {item}
+                                <button type="button" onClick={() => this.removeItem(index)}>
+                                    Remove
+                                </button>
+                    </li>
                 </ul>
                 <input value={this.state.item} onChange={this.handleInputChange}/>
                 <button type="button" onClick={addItem}>
