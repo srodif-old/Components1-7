@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Hello } from "./helloWorld";
 import { Welcome } from "./Welcome";
 import { ClickCounter } from "./ClickCounter";
+import { ShowGithubUser } from "./ShowGihubUser";
 
 export class App extends React.Component{
     
@@ -11,6 +12,7 @@ export class App extends React.Component{
             <Routes>
                 <Route path="/" element={<Welcome />} />
                 <Route path="/counter" element={<ClickCounter />} />
+                <Route path="/users/:username" element={<ShowGithubUser />} />
             </Routes>
         </div>)
     }
