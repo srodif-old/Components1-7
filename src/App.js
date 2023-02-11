@@ -17,6 +17,7 @@ export class App extends React.Component{
                 <Route path="/" element={<Welcome />} />
                 <Route path="counter" element={<ClickCounter />} />
                 <Route path="users" element={<GithubUserList />} >
+                    <Route index element={<p>Add a user and select it</p>} />
                     <Route path="/:username" element={<ShowGithubUser />} />
                 </Route>
                 <Route path="*" element={<p>404</p>} />
