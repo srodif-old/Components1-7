@@ -10,9 +10,9 @@ export class App extends React.Component{
     
     render() {
         return (<div>
-            <Link to="/"></Link>
-            <Link to="counter"></Link>
-            <Link to="users/:username"></Link>
+            <Link to="/">Home</Link>
+            <Link to="counter">counter</Link>
+            <Link to="users/:username">Users</Link>
             <Routes>
                 <Route path="/" element={<Welcome />} />
                 <Route path="counter" element={<ClickCounter />} />
